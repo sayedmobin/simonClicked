@@ -83,8 +83,7 @@ function checkAnswer(currentLevel) {
       }
   } else {
         playSound("wrong");
-        $("body").addClass("game-over");
-        addAndRemoveCLass($("body"), "game-over", "game-over", 1000);
+        addAndRemoveCLass($("body"), "game-over", 1000);
         $("#level-title").text("Game Over, Press Any Key to Restart");
         startOver();
 
@@ -113,10 +112,10 @@ function checkAnswer(currentLevel) {
   }
 
 // This is my custom function to make my life easier
-  function addAndRemoveCLass(where, addClass, removeClass, howlong) {
-    where.addClass(addClass);
+  function addAndRemoveCLass(where, myClass, howlong) {
+    where.addClass(myClass);
     setTimeout(function () {
-      where.removeClass(removeClass);
+      where.removeClass(myClass);
     }, howlong);
   }
 
@@ -124,6 +123,8 @@ function checkAnswer(currentLevel) {
   function startOver() {
     started = false;
     level = 0;
+    gamePattern = [];
+    userClickedPattern = [];
   }
 
 
