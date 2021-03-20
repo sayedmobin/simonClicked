@@ -66,17 +66,13 @@ function nextSequence() {
 
   // Number 3.3 Play sound on choosen button
   playSound(randomChosenColor);
-  console.log(randomChosenColor);
-
 }
 
 
 // Step 8 Starts Here checkAnswer function
 function checkAnswer(currentLevel) {
   if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
-        console.log("Success");
       if (userClickedPattern.length === gamePattern.length) {
-        console.log("Success 2");
         setTimeout(function () {
           nextSequence();
         }, 1000);
